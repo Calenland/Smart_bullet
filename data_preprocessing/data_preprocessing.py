@@ -39,7 +39,7 @@ def positive_tokenizer(split_sentence, counter, stop_words, negative_words):
 
 
     split_sentence = re.sub("[\s+\.\!\/_,$¥%^*(+\"\']+|[+——！{}、！·《》\[\]'：“”【】，\-_——。？?::、~@#￥%……&*（）]+".decode("utf8"),\
-                        "".decode("utf8"),split_sentence)
+                        "".encode("utf8").decode("utf8"),split_sentence)
     split_sentence = list(jieba.cut(split_sentence, cut_all=False))
 
     for w in split_sentence:
@@ -67,7 +67,7 @@ def negative_tokenizer(split_sentence, counter, stop_words, negative_words):
 
     try:
         split_sentence = re.sub("[\s+\.\!\/_,$¥%^*(+\"\']+|[+——！{}、！·《》\[\]'：“”【】，\-_——。？?::、~@#￥%……&*（）]+".decode("utf8"),\
-                            "".decode("utf8"),split_sentence)
+                            "".encode("utf8").decode("utf8"),split_sentence)
         split_sentence = list(jieba.cut(split_sentence, cut_all=False))
 
         for w in split_sentence:
