@@ -53,7 +53,7 @@ def positive_tokenizer(split_sentence, counter, stop_words, negative_words):
                     final.append(seg)
 
     for space_separated_fragment in final:
-        words.extend(re.split(_WORD_SPLIT, space_separated_fragment))
+        words.extend(re.split(_WORD_SPLIT, space_separated_fragment.encode('utf-8')))
 
     if counter % 5000 == 0:
         print('positive tokenizing counter: ', counter)
