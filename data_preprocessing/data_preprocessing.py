@@ -243,7 +243,7 @@ def data_load():
 def join_string(wordlist):
     desiredString = ""
     for item in wordlist:
-        desiredString += item + ' '
+        desiredString += item.decode('utf-8') + ' '
     return desiredString
 
 def data_label(positive_data, negative_data):
