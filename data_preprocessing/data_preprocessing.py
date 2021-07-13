@@ -258,7 +258,7 @@ def data_label(positive_data, negative_data):
         temp_string = join_string(item)
         positiveString += temp_string.strip() + "\n"
 
-    x.write(positiveString.encode('utf-8'))
+    x.write(positiveString.encode('utf-8').decode('utf-8'))
     x.close()
 
     # --------------------- end of positive --------------------------- #
@@ -274,7 +274,7 @@ def data_label(positive_data, negative_data):
         temp_string = join_string(item)
         negativeString += temp_string.strip() + "\n"
 
-    y.write(negativeString.encode('utf-8'))
+    y.write(negativeString.encode('utf-8').decode('utf-8'))
     y.close()
 
     print('data pre-processing finished')
