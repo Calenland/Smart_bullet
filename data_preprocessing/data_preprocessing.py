@@ -26,7 +26,7 @@ def clean_upcount(data):
 
 #clean content which are not \w
 def clean_content(data):
-    if re.match(ur'[\u4e00-\u9fff]+', data) or re.match(r'\w', data):
+    if re.match(r'[\u4e00-\u9fff]+', data) or re.match(r'\w', data):
         return True
     else:
         return False
