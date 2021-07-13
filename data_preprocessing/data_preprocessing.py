@@ -129,8 +129,8 @@ def parse_recipes(input_data):
 
 def parse_bullet(input_data_positive, input_data_negative):
     c = 0
-    stop_words = [line.strip().decode('utf-8') for line in open('stop_words.txt').readlines()]
-    negative_words = [line.strip().decode('utf-8') for line in open('negative_words.txt').readlines()]
+    stop_words = [line.strip().encode('utf-8').decode('utf-8') for line in open('stop_words.txt').readlines()]
+    negative_words = [line.strip().encode('utf-8').decode('utf-8') for line in open('negative_words.txt').readlines()]
 
     input_recipes_positive = parse_recipes(input_data_positive)
     input_recipes_negative = parse_recipes(input_data_negative)
