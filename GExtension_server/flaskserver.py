@@ -104,13 +104,13 @@ def preprocess(wholeDict, stop_words, input_data):
     return x, y, none_index
 
 def predict(sess, x_input, y_input, input_x, input_y, predictions, dropout_keep_prob, none_index):
-        pred = sess.run(
-        predictions,
-        feed_dict={
-            input_x: x_input,
-            input_y: y_input,
-            dropout_keep_prob: 1.0
-        })
+    pred = sess.run(
+    predictions,
+    feed_dict={
+        input_x: x_input,
+        input_y: y_input,
+        dropout_keep_prob: 1.0
+    })
     c = 0
 
     for item in none_index:
