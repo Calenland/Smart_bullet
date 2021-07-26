@@ -54,8 +54,8 @@ def basic_tokenizer(split_sentence, counter, stop_words):
     negative_count = 0
 
 
-    split_sentence = re.sub("[\s+\.\!\/_,$¥%^*(+\"\']+|[+——！{}、！·《》\[\]'：“”【】，\-_——。？?::、~@#￥%……&*（）]+".decode("utf8"),\
-                        "".decode("utf8"),split_sentence)
+    split_sentence = re.sub("[\s+\.\!\/_,$¥%^*(+\"\']+|[+——！{}、！·《》\[\]'：“”【】，\-_——。？?::、~@#￥%……&*（）]+".encode("utf8").decode("utf8"),\
+                        "".encode("utf8").decode("utf8"),split_sentence)
     split_sentence = list(jieba.cut(split_sentence, cut_all=False))
 
 
@@ -152,7 +152,7 @@ if __name__ == '__main__':
         with open("wholeDict.json", 'r') as Dict:
             wholeDict = json.load(Dict)
 
-        stop_words = [line.strip().decode('utf-8') for line in open('stop_words.txt').readlines()]
+        stop_words = [line.strip().encode('utf-8').decode('utf-8') for line in open('stop_words.txt').readlines()]
 
         # app.run(debug=True)
         app.run(host="127.0.0.1", port="5000")
