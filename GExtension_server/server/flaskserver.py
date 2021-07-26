@@ -111,6 +111,7 @@ def predict(sess, x_input, y_input, input_x, input_y, predictions, dropout_keep_
         input_y: y_input,
         dropout_keep_prob: 1.0
     })
+    
     c = 0
 
     for item in none_index:
